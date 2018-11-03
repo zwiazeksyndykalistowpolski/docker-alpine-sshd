@@ -4,7 +4,7 @@ FROM gliderlabs/alpine:3.1
 MAINTAINER Adrian B. Danieli "https://github.com/sickp"
 
 RUN \
-  apk-install openssh && \
+  apk-install openssh bash && \
   echo "root:root" | chpasswd
 
 COPY entrypoint.sh /

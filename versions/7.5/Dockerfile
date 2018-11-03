@@ -4,6 +4,6 @@ ENTRYPOINT ["/entrypoint.sh"]
 EXPOSE 22
 COPY rootfs /
 
-RUN apk add --no-cache openssh \
+RUN apk add --no-cache openssh bash \
   && sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
   && echo "root:root" | chpasswd

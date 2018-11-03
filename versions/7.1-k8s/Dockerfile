@@ -2,7 +2,7 @@ FROM janeczku/alpine-kubernetes:3.3
 MAINTAINER Adrian B. Danieli "https://github.com/sickp"
 
 RUN \
-  apk-install openssh && \
+  apk-install openssh bash && \
   sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config && \
   echo "root:root" | chpasswd
 

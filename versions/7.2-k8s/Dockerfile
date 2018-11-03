@@ -1,7 +1,7 @@
 FROM janeczku/alpine-kubernetes:3.3
 MAINTAINER Adrian B. Danieli "https://github.com/sickp"
 
-RUN apk --update add openssh \
+RUN apk --update add openssh bash \
   && sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
   && echo "root:root" | chpasswd \
   && rm -rf /var/cache/apk/*
